@@ -16,26 +16,19 @@ class List extends React.Component {
     }
 
     render() {
-        let content = <p>Carregando...</p>
-
-        if (this.state.linguagens.length !== 0) {
-            content = (<ul>
-                {this.state.linguagens.map(item => (
-                    <li key={item.id}>
-                        <p><b>Nome:</b> {item.name}</p>
-                        <p><b>Criador:</b> {item.creator}</p>
-                        <p><b>Ano de criação:</b> {item.year}</p>
-                        <img src={item.image}></img>
-                    </li>
-                ))}
-            </ul>)
-        }
-
         return (
             <div>
                 <h1>Lista de linguagens</h1>
 
-                {content}
+                <ul>
+                    {this.state.linguagens.map(item => (
+                        <li key={item.id}>
+                            <p><b>Nome:</b> {item.name}</p>
+                            <p><b>Criador:</b> {item.creator}</p>
+                            <p><b>Ano de criação:</b> {item.year}</p>
+                        </li>
+                    ))}
+                </ul>
             </div>
         );
     }
